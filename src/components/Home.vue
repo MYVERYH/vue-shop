@@ -1,13 +1,22 @@
 <template>
-    <div></div>
+    <div>
+      <el-button type="info" @click="logout">退出</el-button>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  methods: {
+    // 退出登录
+    logout() {
+      window.sessionStorage.clear()
+      this.$router.push('login')
+    }
+  }
 }
 </script>
 
-<style type="less" scoped>
+<style lang="less" scoped>
 
 </style>
